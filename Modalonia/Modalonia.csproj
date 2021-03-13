@@ -20,9 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <AvaloniaResource Include="**\*.xaml">
-      <SubType>Designer</SubType>
-    </AvaloniaResource>
+    <AvaloniaResource Include="**\*.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.9.12" />
+    <PackageReference Include="Avalonia" Version="0.10.0" />
   </ItemGroup>
 
 </Project>

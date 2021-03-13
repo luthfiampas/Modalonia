@@ -1,5 +1,4 @@
 ﻿using Avalonia;
-using Avalonia.Logging.Serilog;
 
 namespace Modalonia.Example
 {
@@ -12,7 +11,7 @@ namespace Modalonia.Example
 
         public static AppBuilder BuildAvaloniaApp()
         {
-            return AppBuilder.Configure<App>().UsePlatformDetect().LogToDebug();
+            return AppBuilder.Configure<App>().UsePlatformDetect().LogToTrace();
         }
     }
 }

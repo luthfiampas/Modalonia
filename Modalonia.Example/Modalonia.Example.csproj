@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.0" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
   </ItemGroup>
   
   <ItemGroup>
@@ -14,6 +15,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <AvaloniaResource Include="**/*.xaml"/>
+    <AvaloniaResource Include="**/*.xaml" />
   </ItemGroup>
 </Project>

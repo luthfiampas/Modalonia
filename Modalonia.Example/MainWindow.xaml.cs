@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 
@@ -15,6 +16,11 @@ namespace Modalonia.Example
         public MainWindow()
         {
             AvaloniaXamlLoader.Load(this);
+
+#if DEBUG
+            this.AttachDevTools();
+#endif
+            
             this.FindControl<Button>("button").Click += Button_Click;
         }
 

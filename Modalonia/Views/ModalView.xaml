@@ -1,43 +1,44 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:Modalonia.ViewModels"
-             x:Class="Modalonia.Views.ModalView" ZIndex="100">
+             x:Class="Modalonia.Views.ModalView"
+             ZIndex="100">
   <UserControl.DataContext>
     <vm:ModalViewModel/>
   </UserControl.DataContext>
   <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-    <Grid Classes="modalonia_container">
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-        <RowDefinition Height="Auto"/>
-        <RowDefinition Height="*"/>
-      </Grid.RowDefinitions>
+    <Grid Classes="modalonia_container" RowDefinitions="*,Auto,*">
       <ContentControl Grid.Row="1" Padding="20">
         <Border Classes="modalonia_border" HorizontalAlignment="Center">
           <StackPanel>
             <ContentControl Classes="modalonia_header">
-              <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*"/>
-                  <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
+              <Grid ColumnDefinitions="*,Auto">
                 <TextBlock Text="{Binding ModalTitle}" Classes="modalonia_header_title"/>
-                <Button Grid.Column="1" Classes="modalonia_header_close" HotKey="Escape" Command="{Binding CloseCommand}"/>
+                <Button Grid.Column="1"
+                        Classes="modalonia_header_close"
+                        HotKey="Escape"
+                        Command="{Binding CloseCommand}"/>
               </Grid>
             </ContentControl>
             <ContentControl Content="{Binding ModalContent}" Classes="modalonia_content"/>
             <ContentControl Classes="modalonia_buttons_container" IsVisible="{Binding HasButtons}">
               <StackPanel Classes="modalonia_buttons" Orientation="Horizontal">
-                <Button Classes="modalonia_button modalonia_button_yes" Content="YES"
-                        Command="{Binding YesCommand}" IsVisible="{Binding WithYesButton}"/>
-                <Button Classes="modalonia_button modalonia_button_no" Content="NO"
-                        Command="{Binding NoCommand}" IsVisible="{Binding WithNoButton}"/>
-                <Button Classes="modalonia_button modalonia_button_ok" Content="OK"
-                        Command="{Binding OkCommand}" IsVisible="{Binding WithOkButton}"/>
-                <Button Classes="modalonia_button modalonia_button_cancel" Content="CANCEL"
-                        Command="{Binding CancelCommand}" IsVisible="{Binding WithCancelButton}"/>
+                <Button Classes="modalonia_button modalonia_button_yes"
+                        Content="YES"
+                        Command="{Binding YesCommand}"
+                        IsVisible="{Binding WithYesButton}"/>
+                <Button Classes="modalonia_button modalonia_button_no"
+                        Content="NO"
+                        Command="{Binding NoCommand}"
+                        IsVisible="{Binding WithNoButton}"/>
+                <Button Classes="modalonia_button modalonia_button_ok"
+                        Content="OK"
+                        Command="{Binding OkCommand}"
+                        IsVisible="{Binding WithOkButton}"/>
+                <Button Classes="modalonia_button modalonia_button_cancel"
+                        Content="CANCEL"
+                        Command="{Binding CancelCommand}"
+                        IsVisible="{Binding WithCancelButton}"/>
               </StackPanel>
             </ContentControl>
           </StackPanel>

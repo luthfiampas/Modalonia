@@ -1,11 +1,15 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:Modalonia.ViewModels"
+             xmlns:converters="clr-namespace:Modalonia.Converters"
              x:Class="Modalonia.Views.ModalView"
              ZIndex="100">
   <UserControl.DataContext>
     <vm:ModalViewModel/>
   </UserControl.DataContext>
+  <UserControl.Resources>
+    <converters:VisibilityToHotKeyConverter x:Key="HotKeyConverter"/>
+  </UserControl.Resources>
   <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
     <Grid Classes="modalonia_container" RowDefinitions="*,Auto,*">
       <ContentControl Grid.Row="1" Padding="20">
@@ -25,19 +29,25 @@
               <StackPanel Classes="modalonia_buttons" Orientation="Horizontal">
                 <Button Classes="modalonia_button modalonia_button_yes"
                         Content="YES"
+                        HotKey="{Binding WithYesButton, Converter={StaticResource HotKeyConverter}, ConverterParameter=Enter}"
                         Command="{Binding YesCommand}"
+                        IsEnabled="{Binding WithYesButton}"
                         IsVisible="{Binding WithYesButton}"/>
                 <Button Classes="modalonia_button modalonia_button_no"
                         Content="NO"
                         Command="{Binding NoCommand}"
+                        IsEnabled="{Binding WithNoButton}"
                         IsVisible="{Binding WithNoButton}"/>
                 <Button Classes="modalonia_button modalonia_button_ok"
                         Content="OK"
+                        HotKey="{Binding WithOkButton, Converter={StaticResource HotKeyConverter}, ConverterParameter=Enter}"
                         Command="{Binding OkCommand}"
+                        IsEnabled="{Binding WithOkButton}"
                         IsVisible="{Binding WithOkButton}"/>
                 <Button Classes="modalonia_button modalonia_button_cancel"
                         Content="CANCEL"
                         Command="{Binding CancelCommand}"
+                        IsEnabled="{Binding WithCancelButton}"
                         IsVisible="{Binding WithCancelButton}"/>
               </StackPanel>
             </ContentControl>

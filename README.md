@@ -1,15 +1,15 @@
 # Modalonia
 [![NuGet Count](https://img.shields.io/nuget/dt/Modalonia.svg?style=flat-square)](https://www.nuget.org/packages/Modalonia/)  
-Simple yet customizable modal for Avalonia. Show modal to the Avalonia's main window.  
+A simple modal for [Avalonia](https://github.com/AvaloniaUI/Avalonia).  
 ![Modalonia](https://i.ibb.co/Vjn6HF8/modalonia.gif "Modalonia")
 
-## Basic usage
+## Usage
 ```csharp
 // you can attach any control as a modal's content..
-var content =  new TextBlock
+var content = new TextBlock
 {
    TextWrapping = TextWrapping.Wrap,
-   Text = "Lorem ipsum dolor si amet orem ipsum dolor si amet orem ipsum dolor si amet orem ipsum dolor si amet"
+   Text = "Lorem ipsum dolor si amet"
 };
 
 var result = await Modal.Show("Modal Title", content, ModalButtons.YesNo);
@@ -20,14 +20,14 @@ if (result == ModalResult.Yes)
 ```
 
 ## Styling
-Add default style to your App.xaml file;
+Add default Modalonia styles to App.xaml.
 ```xaml
 <Application.Styles>
    <StyleInclude Source="avares://Modalonia/Styles/Default.xaml"/>
 </Application.Styles>
 ```
 
-### Modal style selectors
+### Style selectors
 - Grid.modalonia_container
 - Border.modalonia_border
 - ContentControl.modalonia_header
@@ -43,4 +43,4 @@ Add default style to your App.xaml file;
 - Button.modalonia_button_cancel
 
 ## License
-MIT
+[MIT License](https://github.com/luthfiampas/Modalonia/blob/master/LICENSE)

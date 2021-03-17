@@ -5,9 +5,9 @@
     <Product>Modalonia</Product>
     <Description>Simple yet customizable modal for Avalonia. Show modal to the Avalonia's main window.</Description>
     <Authors>Luthfi Tri Atmaja</Authors>
-    <Version>1.1.1</Version>
-    <AssemblyVersion>1.1.1</AssemblyVersion>
-    <FileVersion>1.1.1</FileVersion>
+    <Version>1.1.2</Version>
+    <AssemblyVersion>1.1.2</AssemblyVersion>
+    <FileVersion>1.1.2</FileVersion>
     <PackageId>Modalonia</PackageId>
     <PackageTags>avalonia,modal</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
